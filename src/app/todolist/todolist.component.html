@@ -23,7 +23,7 @@
         </div>
     </div>
     <div>
-        <h3>Completed Task</h3><br>
+        <h3 *ngIf="name.length">Completed Task</h3><br>
         <div id="second" *ngFor="let item of name">
             <div id="set" *ngIf="item.iscomplete">
                 <div class="set1">
