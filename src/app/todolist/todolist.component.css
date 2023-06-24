@@ -1,0 +1,101 @@
+.container {
+  width: 50%;
+  margin: auto;
+  background-color: rgb(213, 159, 223);
+  margin-top: 50px;
+  padding-bottom: 20px;
+  border: 2px solid black;
+  border-radius: 2%;
+}
+
+h1 {
+  font-size: 45px;
+  color: red;
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 10px;
+  border-radius: 20%;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h1:hover {
+  color: blue;
+}
+
+input {
+  width: 45%;
+  height: 39px;
+  margin-left: 25%;
+  margin-top: 40px;
+  outline: none;
+  border: 0;
+  border-bottom: 1px solid;
+}
+
+#second {
+  margin-left: 75px;
+  margin-top: 20px;
+}
+
+h3 {
+  text-align: center;
+  color: red;
+  margin-top: 50px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+h3:hover {
+  color: blue;
+}
+
+#set {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
+#form1 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.set1 {
+  width: 50%;
+  margin-left: 17%;
+}
+
+p {
+  font-size: 20px;
+  font-family: sans-serif;
+  margin: 0px;
+}
+
+input:focus {
+  box-shadow: 0px 0px 10px black;
+}
+
+.btn1 {
+  font-size: 18px;
+  color: darkgreen;
+  border: 2px solid black;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  background-color: lightcoral;
+}
+
+.btn1:hover {
+  background-color: rgb(205, 200, 84);
+}
+
+.btn2 {
+  margin-left: 5px;
+}
+
+fa-icon {
+  font-size: 20px;
+}
+
+#fa{
+  padding: 6px;
+}
