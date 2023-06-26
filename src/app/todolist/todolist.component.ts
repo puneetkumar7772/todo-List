@@ -43,7 +43,7 @@ export class TodolistComponent {
   addTask(data: string) {
     // console.log(data, data.length)
     if (data) {
-      this.name.push({ id: this.name.length, name: data });  //psh data in name array
+      this.name.push({ id: this.name.length, name: data });  //push data in name array
       this.text = "";
     }
     this.saveToLocalStorage();

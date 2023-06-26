@@ -1,43 +1,50 @@
 <div class="container">
     <h1>{{title}}</h1>
-    <form>
-        <input type="text" #task [(ngModel)]="text" (input)="changeInput(text)" name="something"> &nbsp; &nbsp;
-        <button *ngIf="show" [(disabled)]="!text" (click)="addTask(task.value)"
-            class="btn btn1 ">ADD</button>
-        <button *ngIf="!show" [(disabled)]="!text" (click)="updateTask(task.value)" class="btn btn1 ">UPDATE</button>
-    </form>
-    <div id="second" *ngFor="let item of name">
-        <div id="set" *ngIf="!item.iscomplete">
-            <div class="set1">
-                <div style="background-color:rgb(151, 191, 254); padding: 6px;">
-                    <p style="word-wrap: break-word; ">{{item.name}}</p>
-                </div>
+    <div id="main">
+        <div class="form1">
+            <div class="col-6">
+                <input type="text" #task [(ngModel)]="text" (input)="changeInput(text)" name="something"> &nbsp; &nbsp;
             </div>
-            <div>
-                <div id="fa">
-                    <fa-icon (click)="completedTask(item.id)" [icon]="check"></fa-icon>&nbsp;
-                    <fa-icon (click)="editTask(item)" [icon]="edit"></fa-icon>&nbsp;
-                    <fa-icon (click)="removeTask(item.id)" [icon]="icon"></fa-icon>&nbsp;
-                </div>
+            <div class="col-0">
+                <button *ngIf="show" [(disabled)]="!text" (click)="addTask(task.value)" class="btn btn1 ">ADD</button>
+                <button *ngIf="!show" [(disabled)]="!text" (click)="updateTask(task.value)"
+                    class="btn btn1 ">UPDATE</button>
             </div>
         </div>
-    </div>
-    <div>
-        <h3 *ngIf="name.length">Completed Task</h3><br>
-        <div id="second" *ngFor="let item of name">
-            <div id="set" *ngIf="item.iscomplete">
+
+        <table id="first" *ngFor="let item of name">
+            <tr class="set" *ngIf="!item.iscomplete">
                 <div class="set1">
-                    <div style="background-color:rgb(151, 191, 254);">
-                        <p *ngIf="name" style="word-wrap: break-word; padding: 7px; ">{{item.name}}</p>
+                    <div style="background-color:rgb(151, 191, 254); ">
+                        <p style="word-wrap: break-word; padding: 6px">{{item.name}}</p>
                     </div>
                 </div>
                 <div>
-                    <div>
-                        <fa-icon (click)="uncheckTask(item.id)" [icon]="check"></fa-icon>&nbsp;
+                    <div class="fa">
+                        <fa-icon (click)="completedTask(item.id)" [icon]="check"></fa-icon>&nbsp;
+                        <fa-icon (click)="editTask(item)" [icon]="edit"></fa-icon>&nbsp;
                         <fa-icon (click)="removeTask(item.id)" [icon]="icon"></fa-icon>&nbsp;
                     </div>
                 </div>
-            </div>
-        </div>
+            </tr>
+        </table>
+        <table>
+            <h3 *ngIf="name.length">Completed Task</h3><br>
+            <tr id="second" *ngFor="let item of name">
+                <div class="set" *ngIf="item.iscomplete">
+                    <div class="set1" style="margin-left: 0px;">
+                        <div style="background-color:rgb(151, 191, 254);">
+                            <p *ngIf="name" style="word-wrap: break-word; padding: 7px; ">{{item.name}}</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="fa">
+                            <fa-icon (click)="uncheckTask(item.id)" [icon]="check"></fa-icon>&nbsp;&nbsp;&nbsp;
+                            <fa-icon (click)="removeTask(item.id)" [icon]="icon"></fa-icon>
+                        </div>
+                    </div>
+                </div>
+            </tr>
+        </table>
     </div>
 </div>
